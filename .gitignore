@@ -8,3 +8,9 @@ Thumbs.db
 # 用户级 sync 配置：example 提交，env/ps1 不提交避免覆盖个人路径
 .skills-sync.env
 .skills-sync.ps1
+
+# git hooks 本地化：core.hooksPath 指向本地 .githooks，不同机器路径/权限可能不同，不入库
+.githooks/
+
+# 项目级本地记忆（.workbuddy/memory/）：个人工作日志，不同会话/机器内容不同，不入库
+.workbuddy/memory/
