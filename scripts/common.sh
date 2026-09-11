@@ -152,8 +152,14 @@ prune_broken_links() {
   dest_base_dir="$1"
   [ -d "$dest_base_dir" ] || return 0
   find "$dest_base_dir" -maxdepth 1 -type l ! -exec test -e {} \; -print | while IFS= read -r broken; do
-    unlink "$broken"
-    log "已清理断链: $broken"
+    # unlink 在 macOS 上偶尔遇到 EPERM（例如 SIP/权限保护或上一次 hook 残留），
+    # 这里用 if/else 包裹：成功才报"已清理"，失败时给"无法清理"提示但不中断外层 setup.sh，
+    # 避免一个 agent 目录的清理故障让整轮分发中途退出。
+    if unlink "$broken" 2>/dev/null; then
+      log "已清理断链: $broken"
+    else
+      log "无法清理断链（已跳过，待人工处理）: $broken"
+    fi
   done
 }
 
