@@ -35,7 +35,7 @@ sh setup.sh          # 安装到全部 agent + 激活 git hooks
 
 ## 仓库内 skills
 
-仓库当前自带的 4 个考研题库处理 skill（一句话简介）：
+仓库当前自带的 5 个 skill（4 个考研题库处理 + 1 个卡牌转换）：
 
 | name | 一句话作用 |
 |---|---|
@@ -43,6 +43,7 @@ sh setup.sh          # 安装到全部 agent + 激活 git hooks
 | `exam-multiyear-answers` | 把"前半真题 + 后半答案"双块结构多年 PDF 配对题号，输出标准 Excel 题库 |
 | `exam-paired-pdf-to-excel` | 处理"题目 PDF + 答案 PDF"成对教材（如米鹏 720 题风格），合成 Excel 题库 |
 | `exam-processor` | 上传任意真题 PDF/Word/图片，自动识别题目 + 生成答案 + 输出标准 Excel |
+| `xlsx-to-huaji-apkg` | 把 Excel 选择题题库转成滑记 apkg（Anki 卡包），以现有 apkg 为壳只换数据 |
 
 新增 skill 与上述并列，按需在 `skills/<你的目录>/` 下加 `SKILL.md`（frontmatter 填 `name` + `description`）即可。
 
