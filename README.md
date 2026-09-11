@@ -33,6 +33,19 @@ sh setup.sh          # 安装到全部 agent + 激活 git hooks
 | 卸载某个 agent | `sh setup.sh uninstall qoder` |
 | 重新激活 hook | `sh setup.sh hooks` |
 
+## 仓库内 skills
+
+仓库当前自带的 4 个考研题库处理 skill（一句话简介）：
+
+| name | 一句话作用 |
+|---|---|
+| `exam-answer-formatter` | 把论述题/简答题答案文本规范化排版（统一全角中文括号、去掉中英混排、转小点为 ①②③） |
+| `exam-multiyear-answers` | 把"前半真题 + 后半答案"双块结构多年 PDF 配对题号，输出标准 Excel 题库 |
+| `exam-paired-pdf-to-excel` | 处理"题目 PDF + 答案 PDF"成对教材（如米鹏 720 题风格），合成 Excel 题库 |
+| `exam-processor` | 上传任意真题 PDF/Word/图片，自动识别题目 + 生成答案 + 输出标准 Excel |
+
+新增 skill 与上述并列，按需在 `skills/<你的目录>/` 下加 `SKILL.md`（frontmatter 填 `name` + `description`）即可。
+
 ## 新增一个 skill
 
 ```sh
