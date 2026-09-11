@@ -1,0 +1,5 @@
+$ClaudeDir = "$HOME\.claude\skills"
+$CursorDir = "$HOME\.cursor\skills"
+$CodexDir = "$HOME\.codex\skills"
+$QoderDir = "$HOME\.qoder\skills"
+$WorkBuddyDir = "$HOME\.workbuddy\skills"

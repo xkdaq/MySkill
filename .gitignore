@@ -1,0 +1,10 @@
+.DS_Store
+Thumbs.db
+.idea/
+
+# 脚本运行时在目标目录留下的"仓库源指针"标记，不入库
+.public-agent-skills-repo
+
+# 用户级 sync 配置：example 提交，env/ps1 不提交避免覆盖个人路径
+.skills-sync.env
+.skills-sync.ps1
